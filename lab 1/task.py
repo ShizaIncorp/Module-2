@@ -2,13 +2,12 @@
 import random
 from random import randint
 
+
 class Cheese:
     def __init__(self, length: int, width: int, heigth: int):
         self.length = length
         self.width = width
         self.heigth = heigth
-
-
 
     def init_change_length(self, length: int) -> None:
         """
@@ -22,7 +21,6 @@ class Cheese:
         if not length > 0:
             raise ValueError
         self.length = length
-
 
     def init_change_width(self, width: int) -> None:
         """
@@ -62,6 +60,7 @@ class Cheese:
             raise ValueError
         return volume
 
+
 class Lamp:
     """
     >>> lamp = Lamp(1, 300)
@@ -74,10 +73,10 @@ class Lamp:
     >>> print(lamp.brightness)
     500
     """
+
     def __init__(self, switch: int, brightness: int):
         self.switch = switch
         self.brightness = brightness
-
 
     def init_change_switch(self) -> None:
         """
@@ -120,15 +119,20 @@ class Lamp:
         self.brightness = brightness
 
 
-
 class MysteriousTangerine:
-    def __init__(self, radius: int, colour: str):
+    def __init__(self, radius: int, colour="Оранжевый"):
         self.radius = radius
-        self.colour = "Оранжевый"
-        if colour == self.colour:
-            random_colour = ["Красный", "Желтый", "Фиолетовый", "Зеленый", "Голубой", "Синий"]
+        if colour == "Оранжевый":
+            random_colour = [
+                "Красный",
+                "Желтый",
+                "Фиолетовый",
+                "Зеленый",
+                "Голубой",
+                "Синий",
+            ]
             self.colour = random.choice(random_colour)
-        self.peel = randint(0,1)
+        self.peel = randint(0, 1)
 
     def init_repaint(self, colour: str) -> None:
         """
@@ -141,7 +145,6 @@ class MysteriousTangerine:
             raise TypeError
         else:
             self.colour = colour
-
 
     def init_check_peel(self) -> bool:
         """
@@ -172,8 +175,10 @@ class MysteriousTangerine:
         if self.peel == 1:
             self.peel = 0
 
+
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
 
 
