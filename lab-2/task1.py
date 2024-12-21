@@ -34,4 +34,3 @@ if __name__ == "__main__":
     for book in list_books:
         print(book.__str__())
     print(list_books.__repr__())
-
