@@ -53,5 +53,3 @@ if __name__ == "__main__":
     print(library_with_books.get_next_book_id())
 
     print(library_with_books.get_index_by_book_id(1))
-
-
