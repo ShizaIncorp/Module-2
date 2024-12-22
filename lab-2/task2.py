@@ -26,8 +26,11 @@ class Book:
 
 
 class Library:
-    def __init__(self, books=[]):
-        self.books = books
+    def __init__(self, books=None):
+        if books is None:
+            self.books = []
+        else:
+            self.books = books
 
     def get_next_book_id(self):
         if not self.books:
