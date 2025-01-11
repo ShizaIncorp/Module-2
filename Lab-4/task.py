@@ -1,4 +1,3 @@
-from tkinter.font import names
 
 
 class Telephone:
@@ -6,9 +5,9 @@ class Telephone:
     """Базовый класс"""
 
     def __init__(self, memory: int, name: str, model: str):
-        self._name = name #так как имя не телефона по желанию пользователя нельзя менять, поэтому оно непубличное
-        self._model = model #так же причина, что и выше
-        self._memory = memory #Память дискретна, слоты для расширения памяти не предусмотрены)
+        self._name = name  # так как имя не телефона по желанию пользователя нельзя менять, поэтому оно непубличное
+        self._model = model  # так же причина, что и выше
+        self._memory = memory  # Память дискретна, слоты для расширения памяти не предусмотрены)
 
     @property
     def name(self):
@@ -52,7 +51,7 @@ class Apple(Telephone):
 
     def __init__(self, memory: int, name: str, model: str, system: str):
         super().__init__(memory, name, model)
-        self._system = system #система идет от компании
+        self._system = system  # система идет от компании
 
     @property
     def system(self):
