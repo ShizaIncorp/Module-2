@@ -23,7 +23,7 @@ class Book:
 class PaperBook(Book):
     def __init__(self, name: str, author: str, pages: int):
         super().__init__(name, author)
-        self._pages = pages
+        self.pages = pages
 
     @property
     def pages(self):
@@ -37,11 +37,14 @@ class PaperBook(Book):
             raise ValueError
         self._pages = pages
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, pages={self.pages})"
+
 
 class AudioBook(Book):
     def __init__(self, name: str, author: str, duration: float):
         super().__init__(name, author)
-        self._duration = duration
+        self.duration = duration
 
     @property
     def duration(self):
@@ -55,4 +58,6 @@ class AudioBook(Book):
             raise ValueError
         self._duration = duration
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r}, duration={self.duration})"
 
